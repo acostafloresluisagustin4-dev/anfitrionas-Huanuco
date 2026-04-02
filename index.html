@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anfitrionas en Huanuco</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  
+  /* CAMBIO: Ruta de imagen corregida. Asegúrate de que la imagen esté en la misma carpeta */
+  background-image: url("fondo_v_and_d.jpeg"); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Mantiene el fondo quieto al hacer scroll */
+  background-repeat: no-repeat;
+}
+
+/* --- HEADER ORIGINAL CON TRANSPARENCIA --- */
+header {
+  background: rgba(0, 0, 0, 0.85); /* Un poco de transparencia para ver el fondo */
+  color: white;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-contacto {
+  background: #ff0f4f;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+/* --- HERO ORIGINAL --- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  /* Ruta original del usuario - mantenida */
+  background: url("c:\\Users\\ASUS\\Desktop\\WhatsApp Image 2026-03-31 at 6.13.49 PM.jpeg") no-repeat center;
+  background-size: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero img {
+  width: 40%;
+  border-radius: 10px;
+}
+
+.form-box {
+  width: 40%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-box h2 {
+  background: #ff0f4f;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.form-box input, .form-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ff0f4f;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 12px;
+  background: #ff0f4f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+/* --- SECTION TRANSICIÓN CON TRANSPARENCIA --- */
+.section-desc {
+  background: rgba(255, 15, 79, 0.9); /* Transparencia para integrar el fondo */
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+
+/* --- STAFF SECTION CON TRANSPARENCIA --- */
+.staff-section {
+  text-align: center;
+  padding: 60px 5%;
+  background-color: rgba(248, 248, 248, 0.7); /* Transparencia para ver el fondo */
+}
+
+.staff-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.staff-subtitle {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.servicios-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #ff0f4f;
+  color: white;
+  border-radius: 2px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.card-img-container {
+  width: 100%;
+  height: 400px; 
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top; 
+  border: 2px solid white;
+}
+
+.card h3 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.separator {
+  margin: 10px auto;
+  width: 80%;
+  height: 1px;
+  background: rgba(255,255,255,0.5);
+  position: relative;
+}
+.separator::after {
+  content: "♦";
+  position: absolute;
+  top: -8px;
+  left: 45%;
+  background: #ff0f4f;
+  padding: 0 5px;
+  font-size: 0.7rem;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.card ul li {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.card p {
+  padding: 0 15px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn-empleo {
+  display: inline-block;
+  background: white;
+  color: #333;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+/* --- PROMO BLOCK CON TRANSPARENCIA --- */
+.new-promo-block {
+  background-color: rgba(255, 0, 84, 0.9);
+  padding: 40px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  color: white;
+}
+.new-promo-info { flex: 1; min-width: 300px; text-align: center; }
+.new-promo-info h2 { font-weight: 800; margin-bottom: 15px; font-size: 1.8rem; }
+.btn-ws-click {
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 800;
+  margin-top: 15px;
+}
+.new-video-box { 
+  flex: 1; 
+  min-width: 300px; 
+  max-width: 500px; 
+  border: 4px solid white;
+  background: black; 
+}
+
+.new-video-box video { 
+  width: 100%; 
+  display: block; 
+}
+
+/* --- GALLERY CON TRANSPARENCIA --- */
+.new-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px 5%;
+  background: rgba(255, 255, 255, 0.6); /* Transparentado para ver fondo */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gallery-item { text-align: center; }
+.gallery-item img { width: 100%; border-radius: 15px; height: 350px; object-fit: cover; }
+.gallery-item p { margin: 10px 0; font-size: 0.85rem; color: #000; font-weight: 700; }
+.btn-mas-info {
+  background: #ff0054;
+  color: white;
+  text-decoration: none;
+  padding: 8px 25px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+/* --- STATS CON TRANSPARENCIA --- */
+.final-stats {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding: 60px 5% 30px 5%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+}
+.final-stats h2 { 
+  color: #ff0f4f; 
+  font-size: 3.5rem; 
+  margin: 0; 
+  font-weight: 800; 
+  min-width: 150px; 
+}
+.final-stats p { color: #000; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; margin-top: 5px;}
+
+/* --- MOSAIC CON TRANSPARENCIA --- */
+.final-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 0 10% 50px 10%;
+  background: rgba(255, 255, 255, 0.4);
+}
+.final-mosaic img { 
+  width: 100%; 
+  height: 260px; 
+  object-fit: cover; 
+  object-position: center; 
+  border-radius: 10px; 
+}
+
+/* --- SECCIONES AGREGADAS --- */
+
+.final-clientes-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  color: #000;
+  padding-top: 40px;
+}
+
+.clients-grid-new {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+  padding: 0 10% 60px 10%;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+  justify-items: center;
+}
+.clients-grid-new img {
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.pink-info-banner {
+  background-color: rgba(255, 15, 79, 0.9);
+  color: white;
+  text-align: center;
+  padding: 60px 10%;
+}
+.pink-info-banner h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.pink-info-banner p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pilares-iconos-section {
+  text-align: center;
+  padding: 60px 5% 40px 5%;
+  background: rgba(255, 255, 255, 0.6);
+}
+.pilares-header h2 { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
+.pilares-header p { color: #000; font-size: 0.95rem; margin-bottom: 50px; }
+.iconos-container { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto 50px auto; }
+.icon-box { flex: 1; min-width: 150px; text-align: center; }
+.icon-box i { font-size: 4rem; color: #000; margin-bottom: 15px; }
+.icon-box p { font-weight: 800; text-transform: uppercase; font-size: 0.85rem; color: #000; }
+.btn-contratar {
+  display: inline-block;
+  background: #ff0f4f;
+  color: white;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.trabaja-box-section {
+  padding: 60px 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.trabaja-card {
+  background: rgba(255, 15, 79, 0.95);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  max-width: 1000px;
+  color: white;
+  gap: 40px;
+}
+
+.trabaja-card img {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.trabaja-content { text-align: center; }
+.trabaja-content h2 { font-weight: 800; text-transform: uppercase; margin-bottom: 15px; }
+.trabaja-content p { font-size: 0.9rem; line-height: 1.5; margin-bottom: 25px; }
+
+.btn-click-aqui {
+  background: white;
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- FOOTER FINAL --- */
+footer {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 60px 10% 20px 10%;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.footer-nav .active-link {
+  background: #ff0f4f;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #333;
+  padding-top: 30px;
+}
+
+.footer-logo { display: flex; align-items: center; gap: 15px; }
+.footer-logo img { height: 50px; }
+.footer-logo h3 { font-size: 1.2rem; font-weight: 800; line-height: 1; }
+
+.footer-info { font-size: 0.8rem; color: #bbb; text-align: right; }
+.footer-info p { margin: 5px 0; }
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.social-icons a {
+  text-decoration: none;
+}
+.social-icons i {
+  font-size: 1.2rem;
+  background: white;
+  color: black;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 40px;
+}
+
+.btn-wa-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+}
+
+@media (max-width: 900px) {
+  .servicios-container, .new-gallery, .final-mosaic, .clients-grid-new { grid-template-columns: repeat(2, 1fr); }
+  .final-stats { gap: 30px; flex-wrap: wrap; }
+  .trabaja-card { flex-direction: column; border-radius: 20px; padding: 20px; }
+  .trabaja-card img { width: 100%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>ANFITRIONAS DE HUANUCO</h2>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Eventos</a>
+    <a href="#">Servicios</a>
+    <a href="#">Blog</a>
+    <a class="btn-contacto" href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+estoy+visitando+tu+web+y+me+gustar%C3%ADa+solicitar+informaci%C3%B3n+del+mundo+del+anfitronaje+y+tambien+para+contratar+anfitrionas.&type=phone_number&app_absent=0" target="_blank">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <img src="c:\Users\ASUS\Desktop\76b82236-a2aa-4a95-a463-afa3aa57f535.jpg" alt="modelos">
+    <div class="form-box">
+      <h2>ANFITRIONAS Y MODELOS DE HUANUCO</h2>
+      <input type="text" id="nombre_cliente" placeholder="Nombres y Apellidos (EMPRESA)">
+      <input type="text" id="telefono_cliente" placeholder="Teléfono">
+      <input type="email" id="email_cliente" placeholder="Email">
+      <textarea rows="4" id="mensaje_cliente" placeholder="Cuéntanos sobre tu evento..."></textarea>
+      <button onclick="enviarCotizacion()">COTIZAR</button>
+    </div>
+  </div>
+</section>
+
+<section class="section-desc">
+  <h2>NUESTRA AGENCIA DE ANFITRIONAS EN HUANUCO</h2>
+  <p>Somos líderes en organización y gestión de eventos en Huanuco, Perú.</p>
+</section>
+
+<section class="staff-section">
+  <h2 class="staff-title">STAFF DE MODELOS Y ANFITRIONAS PROFESIONALES</h2>
+  <p class="staff-subtitle">Contamos con las anfitrionas y modelos más calificadas para diversos tipos de eventos</p>
+
+  <div class="servicios-container">
+    <div class="card">
+      <div class="card-img-container">
+        <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 3.55.14 PM (1).jpeg" alt="Sociales">
+      </div>
+      <h3>EVENTOS<br>SOCIALES</h3>
+      <div class="separator"></div>
+      <ul>
+        <li>Aniversarios</li>
+        <li>Recepciones</li>
+        <li>Eventos culturales</li>
+        <li>Inauguraciones</li>
+        <li>Desfiles</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-img-container">
+        <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 3.55.14 PM (2).jpeg" alt="Académicos">
+      </div>
+      <h3>EVENTOS<br>ACADÉMICOS</h3>
+      <div class="separator"></div>
+      <ul>
+        <li>Congresos</li>
+        <li>Seminarios</li>
+        <li>Conferencias</li>
+        <li>Ferias</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-img-container">
+        <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 3.55.14 PM (3).jpeg" alt="MKTG">
+      </div>
+      <h3>EVENTOS DE MTKG<br>Y PUBLICIDAD</h3>
+      <div class="separator"></div>
+      <ul>
+        <li>Lanzamiento de productos</li>
+        <li>Activaciones, Samplings,</li>
+        <li>Fotografías, Revistas</li>
+        <li>Catálogos</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-img-container">
+        <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 3.55.14 PM.jpeg" alt="Trabajo">
+      </div>
+      <h3>TRABAJO DE ANFITRIONAS</h3>
+      <div class="separator"></div>
+      <p>Quieres unirte a nuestro equipo de Anfitrionas en Huanuco</p>
+      <a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+estoy+interesada+en+el+trabajo+de+anfitriona+en+Huanuco." class="btn-empleo" target="_blank">SOLICITAR EMPLEO</a>
+    </div>
+  </div>
+</section>
+
+<section class="new-promo-block">
+  <div class="new-promo-info">
+    <h2>SERVICIO GARANTIZADO</h2>
+    <p>Contamos con 10 años de experiencia trabajando en los mejores eventos con anfitrionas y modelos brindando un buen servicio.</p>
+    <a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+quiero+información+sobre+el+servicio+garantizado." class="btn-ws-click" target="_blank">CLICK AQUÍ</a>
+  </div>
+  <div class="new-video-box">
+    <video autoplay muted loop playsinline>
+      <source src="c:\Users\ASUS\Desktop\WhatsApp Video 2026-04-01 at 5.51.06 PM.mp4" type="video/mp4">
+      Tu navegador no soporta videos.
+    </video>
+  </div>
+</section>
+
+<section class="new-gallery">
+  <div class="gallery-item">
+    <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 5.34.12 PM (1).jpeg" alt="Supermercados">
+    <p>Anfitrionas Supermercados</p>
+    <a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+quiero+info+sobre+Anfitrionas+Supermercados." class="btn-mas-info" target="_blank">MAS INFO</a>
+  </div>
+  <div class="gallery-item">
+    <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 3.55.14 PM (1).jpeg" alt="Autos">
+    <p>Anfitrionas Eventos Autos</p>
+    <a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+quiero+info+sobre+Anfitrionas+para+Autos." class="btn-mas-info" target="_blank">MAS INFO</a>
+  </div>
+  <div class="gallery-item">
+    <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 5.56.45 PM.jpeg" alt="Privados">
+    <p>Anfitrionas Eventos Privados</p>
+    <a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+quiero+info+sobre+Anfitrionas+para+Eventos+Privados." class="btn-mas-info" target="_blank">MAS INFO</a>
+  </div>
+  <div class="gallery-item">
+    <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 5.34.12 PM (2).jpeg" alt="Extranjeras">
+    <p>Anfitrionas Extranjeras</p>
+    <a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+quiero+info+sobre+Anfitrionas+Extranjeras." class="btn-mas-info" target="_blank">MAS INFO</a>
+  </div>
+</section>
+
+<section class="final-stats">
+  <div>
+    <h2 class="num-anim" data-val="52">0</h2>
+    <p>Empresas</p>
+  </div>
+  <div>
+    <h2 class="num-anim" data-val="475" data-suffix="+">0</h2>
+    <p>Eventos Asistidos</p>
+  </div>
+  <div>
+    <h2 class="num-anim" data-val="33">0</h2>
+    <p>Anfitrionas</p>
+  </div>
+</section>
+
+<div class="final-mosaic">
+  <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 3.55.14 PM (1).jpeg">
+  <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 3.55.14 PM (2).jpeg">
+  <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 3.55.14 PM (3).jpeg">
+  <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 3.55.14 PM.jpeg">
+</div>
+
+<h2 class="final-clientes-title">NUESTROS CLIENTES</h2>
+
+<section class="clients-grid-new">
+  <img src=" src/5854677876601cdfa66b5fbee6801dc7.jpg">
+  <img src="c:\Users\ASUS\Desktop\images (1).jpg">
+  <img src="c:\Users\ASUS\Desktop\ilustracion-tienda-boutique-logo-estampilla-banner_53876-6829.avif">
+  <img src="c:\Users\ASUS\Desktop\9b940ddd5dea523174b466f9f1418e23.jpg">
+  <img src="c:\Users\ASUS\Desktop\593d8c7490f628441a7cf50ba32dde81.png">
+  <img src="c:\Users\ASUS\Desktop\images (2).jpg">
+</section>
+
+<section class="pink-info-banner">
+  <h3>FERIAS, EVENTOS CORPORATIVOS, ACTIVACIONES, CAMPAÑAS, BTL</h3>
+  <p>
+    En nuestra agencia, especializada en eventos en Huanuco, Perú, elevamos el estándar de tus eventos con nuestro staff de anfitrionas y modelos de primer nivel. Contamos con una amplia experiencia trabajando en diversos tipos de eventos, desde corporativos hasta promocionales.
+  </p>
+</section>
+
+<section class="pilares-iconos-section">
+  <div class="pilares-header">
+    <h2>NUESTROS PILARES</h2>
+    <p>Contamos con las anfitrionas y modelos más calificadas para diversos tipos de eventos</p>
+  </div>
+  <div class="iconos-container">
+    <div class="icon-box"><i class="fa-solid fa-person-dress"></i><p>Presencia</p></div>
+    <div class="icon-box"><i class="fa-solid fa-bullseye"></i><p>Eficiencia</p></div>
+    <div class="icon-box"><i class="fa-solid fa-handshake"></i><p>Compromiso</p></div>
+    <div class="icon-box"><i class="fa-solid fa-stopwatch-20"></i><p>Puntualidad</p></div>
+  </div>
+  <a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+quiero+contratar+anfitrionas." class="btn-contratar" target="_blank">CONTRATAR ANFITRIONAS <i class="fa-solid fa-magnifying-glass"></i></a>
+</section>
+
+<section class="trabaja-box-section">
+  <div class="trabaja-card">
+    <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-04-01 at 5.56.45 PM.jpeg">
+    <div class="trabaja-content">
+      <h2>TRABAJA CON NOSOTRAS</h2>
+      <p>¿Te gustaría conocer más sobre nuestras talentosas anfitrionas en Huanuco? Estamos disponibles para responder todas tus consultas y proporcionarte información detallada sobre nuestros servicios y oportunidades. No dudes en preguntar acerca de requisitos, beneficios y cómo puedes unirte a nuestro equipo. ¡Estamos aquí para ayudarte a tomar la mejor decisión!</p>
+      <a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+quiero+unirme+a+su+equipo+de+anfitrionas." class="btn-click-aqui" target="_blank"><i class="fa-brands fa-whatsapp"></i> CLICK AQUÍ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-nav">
+    <a href="#">ANFITRIONAS</a>
+    <a href="#">EVENTOS</a>
+    <a href="#" class="active-link">NUESTROS SERVICIOS</a>
+    <a href="#">NUESTRA AGENCIA</a>
+    <a href="#">CASTING</a>
+    <a href="#">BLOG</a>
+    <a href="#">ANFITRIONAS B</a>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/14ViWfy9pLK/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/lucedy3516?igsh=ZXpkeXpwNzJsZXVv" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+te+contacto+desde+la+web." target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="mailto:vanessavalenzuela309@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+  </div>
+
+  <div class="footer-main">
+    <div class="footer-logo">
+      <img src="c:\Users\ASUS\Desktop\WhatsApp Image 2026-03-31 at 6.13.49 PM.jpeg">
+      <h3>ANFITRIONAS<br><small>& ACTIVACIONES</small></h3>
+    </div>
+    <div class="footer-info">
+      <p><a href="mailto:vanessavalenzuela309@gmail.com" style="color: #bbb; text-decoration: none;"><i class="fa-solid fa-envelope"></i> vanessavalenzuela309@gmail.com</a></p> 
+    </div>
+  </div>
+
+  <div class="copyright">
+    Copyright © 2026 | Agencia SEO en Huanuco Sin Floro
+  </div>
+</footer>
+
+<a href="https://api.whatsapp.com/send/?phone=51942237295&text=Hola%2C+estoy+visitando+tu+web+y+me+gustar%C3%ADa+solicitar+informaci%C3%B3n+del+mundo+del+anfitronaje+y+tambien+para+contratar+anfitrionas.&type=phone_number&app_absent=0" 
+   class="btn-wa-float" 
+   target="_blank">
+  <i class="fa-brands fa-whatsapp"></i> ¿Cómo puedo ayudarte?
+</a>
+
+<script>
+  // --- FUNCIÓN DE ENVÍO A WHATSAPP Y CORREO ---
+  function enviarCotizacion() {
+    const nombre = document.getElementById('nombre_cliente').value;
+    const telefono = document.getElementById('telefono_cliente').value;
+    const email = document.getElementById('email_cliente').value;
+    const mensaje = document.getElementById('mensaje_cliente').value;
+    
+    if (nombre === "" || telefono === "") {
+        alert("Por favor, ingresa tu nombre y teléfono para contactarte.");
+        return;
+    }
+
+    // Configuración WhatsApp
+    const miNumero = "51942237295";
+    const textoWA = `*NUEVA COTIZACIÓN WEB*%0A*Nombre:* ${nombre}%0A*Teléfono:* ${telefono}%0A*Email:* ${email}%0A*Evento:* ${mensaje}`;
+    const urlWA = `https://api.whatsapp.com/send?phone=${miNumero}&text=${textoWA}`;
+
+    // Configuración Envío a Correo (Vía FormSubmit)
+    fetch("https://formsubmit.co/ajax/vanessavalenzuela309@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            Empresa_Nombre: nombre,
+            Telefono: telefono,
+            Email: email,
+            Detalles_Evento: mensaje,
+            _subject: "NUEVA COTIZACIÓN DESDE LA WEB"
+        })
+    });
+
+    // Abrir WhatsApp
+    window.open(urlWA, '_blank');
+  }
+
+  // --- CONTADORES ORIGINALES ---
+  function startInfiniteCounter() {
+    const elements = document.querySelectorAll(".num-anim");
+    elements.forEach((el) => {
+      const endValue = parseInt(el.getAttribute("data-val"));
+      const suffix = el.getAttribute("data-suffix") || "";
+      let startValue = 0;
+      const duration = 2000;
+      const stepTime = duration / endValue;
+      const counter = setInterval(() => {
+        startValue++;
+        el.textContent = startValue + suffix;
+        if (startValue === endValue) {
+          clearInterval(counter);
+          setTimeout(() => { el.textContent = "0"; restartIndividual(el); }, 3000);
+        }
+      }, stepTime);
+    });
+  }
+
+  function restartIndividual(el) {
+    const endValue = parseInt(el.getAttribute("data-val"));
+    const suffix = el.getAttribute("data-suffix") || "";
+    let startValue = 0;
+    const duration = 2000;
+    const stepTime = duration / endValue;
+    const counter = setInterval(() => {
+      startValue++;
+      el.textContent = startValue + suffix;
+      if (startValue === endValue) {
+        clearInterval(counter);
+        setTimeout(() => { el.textContent = "0"; restartIndividual(el); }, 3000);
+      }
+    }, stepTime);
+  }
+  window.onload = startInfiniteCounter;
+</script>
+
+</body>
+</html>
